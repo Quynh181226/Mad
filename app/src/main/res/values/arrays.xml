@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="loai_linh_kien">
+        <item>Tất cả</item>
+        <item>Điện trở</item>
+        <item>Tụ điện</item>
+        <item>IC</item>
+        <item>Cảm biến</item>
+        <item>LED</item>
+    </string-array>
+</resources>

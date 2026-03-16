@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">mad2</string>
+    <string name="label_ma_linh_kien">Mã linh kiện <font color="#A82323">*</font></string>
+    <string name="label_ten_linh_kien">Tên linh kiện <font color="#A82323">*</font></string>
+    <string name="label_loai_linh_kien">Loại linh kiện <font color="#A82323">*</font></string>
+</resources>

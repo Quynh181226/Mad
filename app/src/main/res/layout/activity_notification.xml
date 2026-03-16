@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="THÔNG BÁO"
+        app:titleTextColor="@android:color/white" />
+
+    <!-- Tab layout thay vì 2 nút riêng lẻ -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/purple_500"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/purple_500"
+        app:tabTextColor="@android:color/darker_gray"
+        app:tabMode="fixed"
+        app:tabGravity="fill">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHƯA ĐỌC (5)" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ĐÃ ĐỌC (3)" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Nút đánh dấu tất cả đã đọc dạng chip -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/btnMarkAllRead"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_margin="16dp"
+        android:text="Đánh dấu tất cả đã đọc"
+        android:textColor="@color/purple_500"
+        app:chipBackgroundColor="@android:color/white"
+        app:chipStrokeColor="@color/purple_500"
+        app:chipStrokeWidth="1dp"
+        app:chipIconTint="@color/purple_500"
+        app:rippleColor="@color/purple_200"
+        style="@style/Widget.MaterialComponents.Chip.Action" />
+
+
+
+<!--    app:chipIcon="@android:drawable/ic_menu_edit"-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/bottom_nav_color"
+        app:itemTextColor="@drawable/bottom_nav_color"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled" />
+</LinearLayout>
