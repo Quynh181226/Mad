@@ -4,7 +4,7 @@
 <!--    <item android:state_checked="false" android:color="@color/purple_200" /> &lt;!&ndash; Màu nhạt khi không chọn &ndash;&gt;-->
 
 
+    <item android:state_checked="true" android:color="@color/purple_200" />
 
     <item android:state_checked="false" android:color="@color/purple_700" />
-    <item android:state_checked="true" android:color="@color/purple_200" />
 </selector>

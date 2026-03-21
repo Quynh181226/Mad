@@ -7,9 +7,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mad2.R;
 
-public class SplashActivity extends AppCompatActivity {
-
-    private static final int SPLASH_TIME_OUT = 2000;
+public class StartActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -32,13 +30,13 @@ public class SplashActivity extends AppCompatActivity {
 //                    intent = new Intent(SplashActivity.this, WelcomeActivity.class);
 //                } else
                 if (!isLoggedIn) {
-                    intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    intent = new Intent(StartActivity.this, LoginActivity.class);
                 } else {
-                    intent = new Intent(SplashActivity.this, MainActivity.class);
+                    intent = new Intent(StartActivity.this, MainActivity.class);
                 }
                 startActivity(intent);
                 finish();
             }
-        }, SPLASH_TIME_OUT);
+        }, 2000);
     }
 }

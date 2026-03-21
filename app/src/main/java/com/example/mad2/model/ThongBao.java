@@ -6,7 +6,8 @@ public class ThongBao {
     private String noiDung;
     private String thoiGian;
     private boolean daDoc;
-    private String loai; // "TON_KHO_THAP", "NHAP_KHO", "XUAT_KHO"
+    //Ton kho thap, Nhap-Xuat kho
+    private String loai;
 
     public ThongBao(int id, String tieuDe, String noiDung, String thoiGian, boolean daDoc, String loai) {
         this.id = id;
@@ -17,7 +18,6 @@ public class ThongBao {
         this.loai = loai;
     }
 
-    // Getters và Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

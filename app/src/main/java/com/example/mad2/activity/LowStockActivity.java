@@ -18,6 +18,7 @@ import com.example.mad2.database.DatabaseHelper;
 import com.example.mad2.database.DatabaseManager;
 import com.example.mad2.model.LinhKien;
 import com.example.mad2.model.LoaiLinhKien;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,11 @@ public class LowStockActivity extends AppCompatActivity {
     private Button btnNhapHang;
     private LowStockAdapter adapter;
     private List<LinhKien> lowStockList;
+
+
+
+    private BottomNavigationView bottomNavigation;
+
     private DatabaseHelper dbHelper;
 
     @Override
@@ -36,8 +42,7 @@ public class LowStockActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_low_stock);
 
-        dbHelper = DatabaseManager.getInstance(); // THÊM DÒNG NÀY
-
+        dbHelper = DatabaseManager.getInstance();
 
         initViews();
         setupToolbar();
@@ -50,6 +55,13 @@ public class LowStockActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         recyclerView = findViewById(R.id.recyclerView);
         btnNhapHang = findViewById(R.id.btnNhapHang);
+
+
+
+
+        bottomNavigation = findViewById(R.id.bottomNavigation);
+
+        bottomNavigation.setSelectedItemId(R.id.nav_low_stock);
     }
 
     private void setupToolbar() {
@@ -101,6 +113,27 @@ public class LowStockActivity extends AppCompatActivity {
                 intent.putExtra("mode", "NHAP");
                 startActivity(intent);
             }
+        });
+
+
+
+
+
+        bottomNavigation.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home) {
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+            } else if (id == R.id.nav_low_stock) {
+                return true;
+            } else if (id == R.id.nav_bell) {
+                startActivity(new Intent(this, NotificationActivity.class));
+                return true;
+            } else if (id == R.id.nav_profile) {
+                startActivity(new Intent(this, ProfileActivity.class));
+                return true;
+            }
+            return false;
         });
     }
 

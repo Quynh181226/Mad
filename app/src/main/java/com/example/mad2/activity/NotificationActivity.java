@@ -77,6 +77,9 @@ public class NotificationActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottomNavigation);
 
 
+
+
+        bottomNavigation.setSelectedItemId(R.id.nav_bell);
     }
 
     private void setupToolbar() {
@@ -171,9 +174,20 @@ public class NotificationActivity extends AppCompatActivity {
                 if (tab.getPosition() == 0) {
                     showingUnread = true;
                     filterUnread();
+
+
+
+                    btnMarkAllRead.setVisibility(View.VISIBLE);  // THÊM DÒNG NÀY
+
                 } else {
                     showingUnread = false;
                     filterRead();
+
+
+
+
+                    btnMarkAllRead.setVisibility(View.GONE);     // THÊM DÒNG NÀY
+
                 }
             }
 

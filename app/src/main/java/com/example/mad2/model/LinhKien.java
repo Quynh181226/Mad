@@ -11,15 +11,13 @@ public class LinhKien implements Serializable {
     private double giaNhap;
     private String ngayTao;
     private String ghiChu;
-    private int selectedQuantity; // Số lượng được chọn khi nhập/xuất
+    //Slg đc chon khi Nhap-Xuat
+    private int selectedQuantity;
 
-    // Constructor rỗng
     public LinhKien() {
     }
 
-    // Constructor đầy đủ
-    public LinhKien(int id, String maLinhKien, String tenLinhKien, LoaiLinhKien loai,
-                    int soLuongTon, double giaNhap, String ngayTao, String ghiChu) {
+    public LinhKien(int id, String maLinhKien, String tenLinhKien, LoaiLinhKien loai, int soLuongTon, double giaNhap, String ngayTao, String ghiChu) {
         this.id = id;
         this.maLinhKien = maLinhKien;
         this.tenLinhKien = tenLinhKien;
@@ -31,7 +29,6 @@ public class LinhKien implements Serializable {
         this.selectedQuantity = 0;
     }
 
-    // Getters và Setters
     public int getId() {
         return id;
     }

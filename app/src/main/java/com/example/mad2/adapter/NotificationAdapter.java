@@ -51,9 +51,19 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         if (item.isDaDoc()) {
             holder.itemView.setAlpha(0.6f);
             holder.tvTieuDe.setTextColor(holder.itemView.getContext().getColor(android.R.color.darker_gray));
+
+
+
+            holder.btnMarkRead.setVisibility(View.GONE);  // ẨN NÚT KHI ĐÃ ĐỌC
+
         } else {
             holder.itemView.setAlpha(1.0f);
             holder.tvTieuDe.setTextColor(holder.itemView.getContext().getColor(android.R.color.black));
+
+
+
+            holder.btnMarkRead.setVisibility(View.VISIBLE); // HIỆN NÚT KHI CHƯA ĐỌC
+
         }
 
         holder.itemView.setOnClickListener(v -> {

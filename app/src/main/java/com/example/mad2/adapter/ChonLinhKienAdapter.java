@@ -169,12 +169,6 @@ public class ChonLinhKienAdapter extends RecyclerView.Adapter<ChonLinhKienAdapte
         });
     }
 
-
-
-
-
-
-
     @Override
     public int getItemCount() {
         return list == null ? 0 : list.size();

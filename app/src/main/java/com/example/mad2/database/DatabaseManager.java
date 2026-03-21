@@ -1,8 +1,7 @@
 package com.example.mad2.database;
 
 import android.content.Context;
-
-import com.example.mad2.activity.MainActivity;
+//import com.example.mad2.activity.MainActivity;
 
 public class DatabaseManager {
     private static DatabaseHelper databaseHelper;

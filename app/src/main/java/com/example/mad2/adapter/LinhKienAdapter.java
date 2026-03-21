@@ -252,7 +252,7 @@ public class LinhKienAdapter extends RecyclerView.Adapter<LinhKienAdapter.ViewHo
         holder.tvMa.setText("Mã: " + item.getMaLinhKien());
 
 // Tên linh kiện
-        holder.tvTen.setText(item.getTenLinhKien());  // tên thường không cần thêm "Tên: " vì đã nổi bật
+        holder.tvTen.setText(item.getTenLinhKien());
 
 // Loại linh kiện
         holder.tvLoai.setText("Loại: " + (item.getLoai() != null ? item.getLoai().getTenLoai() : ""));
@@ -287,8 +287,8 @@ public class LinhKienAdapter extends RecyclerView.Adapter<LinhKienAdapter.ViewHo
 
         holder.btnEdit.setOnClickListener(v -> {
             Intent intent = new Intent(holder.itemView.getContext(), AddEditActivity.class);
-            intent.putExtra(Constants.KEY_MODE, Constants.MODE_EDIT);
-            intent.putExtra(Constants.KEY_LINH_KIEN, item);
+            intent.putExtra("mode", "edit");
+            intent.putExtra("linh_kien", item);
             holder.itemView.getContext().startActivity(intent);
         });
 

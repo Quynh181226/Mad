@@ -60,7 +60,7 @@ public class NhapXuatActivity extends AppCompatActivity {
 
         // Nhận mode từ Intent
         mode = getIntent().getStringExtra("mode");
-        if (mode == null) mode = "NHAP";
+        if (mode == null) mode = "Import";
 
         DatabaseManager.init(this);
         dbHelper = DatabaseManager.getInstance();
@@ -91,7 +91,7 @@ public class NhapXuatActivity extends AppCompatActivity {
 
 
         // Đổi giao diện theo mode
-        if (mode.equals("NHAP")) {
+        if (mode.equals("Import")) {
             toolbar.setTitle("Nhập Kho");
 //            btnXacNhan.setBackgroundResource(R.drawable.button_primary);
 //            btnXacNhan.setText("XÁC NHẬN NHẬP");
@@ -317,7 +317,7 @@ public class NhapXuatActivity extends AppCompatActivity {
         List<LinhKien> selectedList = adapter.getSelectedList();
 
         for (LinhKien lk : selectedList) {
-            if (mode.equals("NHAP")) {
+            if (mode.equals("Import")) {
                 lk.setSoLuongTon(lk.getSoLuongTon() + lk.getSelectedQuantity());
             } else {
                 lk.setSoLuongTon(lk.getSoLuongTon() - lk.getSelectedQuantity());
@@ -325,7 +325,7 @@ public class NhapXuatActivity extends AppCompatActivity {
             dbHelper.updateLinhKien(lk);
         }
 
-        String action = mode.equals("NHAP") ? "Nhập" : "Xuất";
+        String action = mode.equals("Import") ? "Nhập" : "Xuất";
         Toast.makeText(this,
                 action + " kho thành công!\n" +
                         "Tổng SL: " + tvTongSoLuong.getText() + "\n" +
